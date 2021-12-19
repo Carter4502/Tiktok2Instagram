@@ -14,9 +14,9 @@ import uuid
 # and then crop the video to fit the aspect ratio of an instagram post and output it to a folder of your choice.
 
 
-PATH_TO_AUDIO = "C:\\Users\\carte\\Desktop\\No Copyright Audio" # path to folder of .mp3 audio files for your videos
-OUTPUT_FILE_DIR = "C:\\Users\\carte\\Desktop\\ig vid" # path to folder to store videos
-VERIFY_FP = "verify_dc5798f4ec326cf6b274eec5dfcbf03b" # follow this tutorial to get your verifyFp https://medium.com/analytics-vidhya/download-tiktoks-with-python-dcbd79a5237f
+PATH_TO_AUDIO = "" # path to folder of .mp3 audio files for your videos
+OUTPUT_FILE_DIR = "" # path to folder to store videos
+VERIFY_FP = "" # follow this tutorial to get your verifyFp https://medium.com/analytics-vidhya/download-tiktoks-with-python-dcbd79a5237f
 
 def downloadTiktokVideo(link, name):
 	did = ''.join(random.choice(string.digits) for num in range(19))
@@ -45,7 +45,6 @@ def prepVideo(video_path, audio_path):
 	return video
 
 def download_crop_add_audio(link_to_video):
-	print("here")
 	file_name = str(uuid.uuid1().hex)
 	downloaded_path = downloadTiktokVideo(link_to_video, file_name)
 	audio = getRandomMusicFile(PATH_TO_AUDIO)
